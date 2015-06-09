@@ -23,4 +23,14 @@ public class OtherCommoditiesTest {
 
         assertEquals(expectedPrice, actualPrice, 0.05d);
     }
+
+    @Test
+    public void shouldReturnProperStringWhenItsGivenThatItIsImported() {
+        OtherCommodities other = new OtherCommodities("CD", 47.51, true);
+
+        String actualString = other.toString();
+        String expectedString = "1 imported CD:47.51";
+
+        assertEquals(actualString,expectedString);
+    }
 }

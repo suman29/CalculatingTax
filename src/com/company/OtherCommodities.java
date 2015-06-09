@@ -18,4 +18,11 @@ public class OtherCommodities {
         return price;
     }
 
+    @Override
+    public String toString() {
+        if(imported)
+            return ("1 imported "+name+":"+price);
+        else
+            return ("1 "+name+":"+price);
+    }
 }
