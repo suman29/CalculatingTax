@@ -23,6 +23,7 @@ public class Tax {
             while (quantity > 0) {
                 FoodBooksMedicines product = new FoodBooksMedicines(productName, price, imported);
                 totalTax += product.priceOnApplyingTax();
+                System.out.println(product.toString());
                 quantity--;
             }
         } else if (input.length == 5) {
@@ -33,6 +34,7 @@ public class Tax {
             while (quantity > 0) {
                 FoodBooksMedicines product = new FoodBooksMedicines(productName, price, imported);
                 totalTax += product.priceOnApplyingTax();
+                System.out.println(product.toString());
                 quantity--;
             }
 
@@ -44,6 +46,7 @@ public class Tax {
             while (quantity > 0) {
                 OtherCommodities product = new OtherCommodities(productName, price, imported);
                 totalTax += product.priceOnApplyingTax();
+                System.out.println(product.toString());
                 quantity--;
             }
 
@@ -51,10 +54,11 @@ public class Tax {
             quantity = Integer.parseInt(input[2]);
             productName = input[4];
             price = Float.parseFloat(input[6]);
-            imported = false;
+            imported = true;
             while (quantity > 0) {
                 OtherCommodities product = new OtherCommodities(productName, price, imported);
                 totalTax += product.priceOnApplyingTax();
+                System.out.println(product.toString());
                 quantity--;
             }
 
