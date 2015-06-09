@@ -13,4 +13,14 @@ public class TaxTest {
 
         assertEquals(actualTotalTax, expectedTotalTax, 0.05d);
     }
+
+    @Test
+    public void shouldBeAbleToParseTheUserInputAndCalculateTaxWhenTheProductIsImportedAndIsAChocolate() {
+        Tax tax = new Tax("1 imported chocolate at 11.25");
+
+        double actualTotalTax = tax.parseUserInputAndCalculateTax();
+        double expectedTotalTax = 11.85;
+
+        assertEquals(actualTotalTax, expectedTotalTax, 0.05d);
+    }
 }
