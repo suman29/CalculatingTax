@@ -16,4 +16,12 @@ public class Food {
             return (price+=0.05*price);
         return price;
     }
+
+    @Override
+    public String toString() {
+        if(imported)
+        return ("1 imported "+name+":"+price);
+        else
+            return ("1 "+name+":"+price);
+    }
 }

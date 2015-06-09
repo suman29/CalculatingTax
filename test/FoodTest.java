@@ -25,4 +25,14 @@ public class FoodTest {
 
         assertEquals(actualPrice, expectedPrice, 0.05d);
     }
+
+    @Test
+    public void shouldReturnProperStringWhenItsGivenThatItIsImported() {
+        Food food = new Food("Chocolate", 11.25, true);
+
+        String actualString = food.toString();
+        String expectedString = "1 imported Chocolate:11.25";
+
+        assertEquals(actualString,expectedString);
+    }
 }
