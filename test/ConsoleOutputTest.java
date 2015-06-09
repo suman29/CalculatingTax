@@ -1,3 +1,4 @@
+import com.company.ConsoleOutput;
 import com.company.Tax;
 import org.junit.Test;
 
@@ -13,6 +14,8 @@ public class ConsoleOutputTest {
         when(taxStub.parseUserInputAndCalculateTax())
                 .thenReturn(0.85);
         Tax tax = new Tax("1 chocolate at 0.85");
+        ConsoleOutput output = new ConsoleOutput();
+        output.display(tax);
 
         double actualTotalTax = tax.parseUserInputAndCalculateTax();
         double expectedTotalTax = 0.85;
