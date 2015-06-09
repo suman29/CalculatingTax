@@ -23,4 +23,15 @@ public class TaxTest {
 
         assertEquals(actualTotalTax, expectedTotalTax, 0.05d);
     }
+
+    @Test
+    public void shouldBeAbleToParseTheUserInputAndCalculateTaxWhenTheProductIsNotImportedAndIsACD() {
+        Tax tax = new Tax("Other Products 1 CD at 14.99");
+
+        double actualTotalTax = tax.parseUserInputAndCalculateTax();
+        double expectedTotalTax = 16.49;
+
+        assertEquals(actualTotalTax, expectedTotalTax, 0.05d);
+    }
+    
 }
