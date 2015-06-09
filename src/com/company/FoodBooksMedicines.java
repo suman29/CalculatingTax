@@ -1,11 +1,11 @@
 package com.company;
 
-public class Food {
+public class FoodBooksMedicines {
     double price;
     String name;
     boolean imported;
 
-    public Food(String name, double price, boolean imported) {
+    public FoodBooksMedicines(String name, double price, boolean imported) {
         this.name = name;
         this.price = price;
         this.imported = imported;
