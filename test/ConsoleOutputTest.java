@@ -1,15 +1,23 @@
-import com.company.FoodBooksMedicines;
+import com.company.Tax;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
+
 import static org.mockito.Mockito.when;
 
 public class ConsoleOutputTest {
     @Test
     public void shouldPrintTheProductWithPriceInProperFormat() {
-        FoodBooksMedicines productStub = mock(FoodBooksMedicines.class);
-        when(productStub.toString())
-                .thenReturn("1 imported Chocolate:11.25");
+       Tax taxStub = mock(Tax.class);
+        when(taxStub.parseUserInputAndCalculateTax())
+                .thenReturn(0.85);
+        Tax tax = new Tax("1 chocolate at 0.85");
+
+        double actualTotalTax = tax.parseUserInputAndCalculateTax();
+        double expectedTotalTax = 0.85;
+
+        assertEquals(actualTotalTax,expectedTotalTax, 0.05d);
 
     }
 }

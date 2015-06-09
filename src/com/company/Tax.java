@@ -20,6 +20,7 @@ public class Tax {
             productName = input[1];
             price = Float.parseFloat(input[3]);
             imported = false;
+
             while (quantity > 0) {
                 FoodBooksMedicines product = new FoodBooksMedicines(productName, price, imported);
                 totalTax += product.priceOnApplyingTax();
@@ -65,5 +66,9 @@ public class Tax {
         }
 
         return totalTax;
+    }
+
+    public double getSalesTax() {
+        return totalTax - price * quantity;
     }
 }
